@@ -56,10 +56,10 @@ namespace aicore
 	bool Goal::canMergeGoals(const Goal& goal) const
 	{
 		return !(
-			positionSet && goal.positionSet ||
-			orientationSet && goal.orientationSet ||
-			velocitySet && goal.velocitySet ||
-			rotationSet && goal.rotationSet
+			(positionSet && goal.positionSet) ||
+			(orientationSet && goal.orientationSet) ||
+			(velocitySet && goal.velocitySet) ||
+			(rotationSet && goal.rotationSet)
 			);
 	}
 
