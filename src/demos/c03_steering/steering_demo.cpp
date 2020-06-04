@@ -9,6 +9,10 @@
  * implies agreement with all terms and conditions of the accompanying
  * software licence.
  */
+#ifdef __APPLE__
+#define GL_SILENCE_DEPRECATION
+#endif
+
 #include <cstdlib>
 #include <cstdio>
 
