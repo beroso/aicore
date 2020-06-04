@@ -1,9 +1,13 @@
 cmake_minimum_required(VERSION 2.6)
 project(AI4G)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../bin)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ../lib)
-set(SRC ../src)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY lib)
+set(SRC src)
 
 find_package(GLU REQUIRED)
 find_package(GLUT REQUIRED)
@@ -18,7 +22,7 @@ IF(APPLE)
    SET(EXTRA_LIBS ${COCOA_LIBRARY} ${GLUT_LIBRARY} ${OPENGL_LIBRARY})
 ENDIF (APPLE)
 
-include_directories(../include ${GLUT_INCLUDE_DIR} ${GL_INCLUDE_DIR})
+include_directories(include ${GLUT_INCLUDE_DIR} ${GL_INCLUDE_DIR})
 
 add_library(aicore STATIC
   ${SRC}/action.cpp
